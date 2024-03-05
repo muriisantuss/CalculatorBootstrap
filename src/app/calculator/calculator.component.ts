@@ -17,6 +17,11 @@ export class CalculatorComponent {
   }
 
   calculateOperations() {
-    
+    this.displayValue = eval(this.displayValue).toString();
+
+    try {
+    } catch (Error) {
+      this.displayValue = 'Error';
+    }
   }
 }
