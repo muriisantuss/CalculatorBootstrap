@@ -1,135 +1,100 @@
-<main class="d-flex align-items-center justify-content-center vh-100 ">
-  <section class="row col-md-4 justify-content-center bg-danger rounded p-3">
-    <div class="mt-3 row ">
-      <input class="text-center"
-        type="text"
-        id="display"
-        [(ngModel)]="displayValue"
-        maxLength="{3}"
-        readonly
-      />
+<main
+  class="d-flex align-items-center justify-content-center vh-100 p-3 mb-2 bg-dark bg-opacity-10 bg-gradient p-2"
+>
+  <section class="card row justify-content-center">
+    <div class="card-header p-4">
+      <div class="input-group mb-3 mt-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">
+          <i class="fas fa-calculator"></i>
+        </span>
+        <input
+          type="text"
+          [(ngModel)]="displayValue"
+          class="form-control"
+          aria-label="Enter with your number"
+          aria-describedby="inputGroup-sizing-default"
+        />
+      </div>
     </div>
-
-    <div class="mt-3 row">
-      <button class="btn btn-outline-secondary col" (click)="clearDisplay()">
-        AC
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('**')"
-      >
-        ^
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('%')"
-      >
-        %
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('/')"
-      >
-        ÷
-      </button>
-    </div>
-    <div class="mt-3 row">
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('7')"
-      >
-        7
-      </button>
-      <button
-        class="btn btn-outline-secondary col col"
-        (click)="appendToDisplay('8')"
-      >
-        8
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('9')"
-      >
-        9
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('*')"
-      >
-        x
-      </button>
-    </div>
-    <div class="mt-3 row">
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('4')"
-      >
-        4
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('5')"
-      >
-        5
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('6')"
-      >
-        6
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('-')"
-      >
-        -
-      </button>
-    </div>
-    <div class="mt-3 row">
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('1')"
-      >
-        1
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('2')"
-      >
-        2
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('3')"
-      >
-        3
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('+')"
-      >
-        +
-      </button>
-    </div>
-    <div class="mt-3 mb-3  row">
-      <button
-        class="btn btn-outline-secondary col-6"
-        (click)="appendToDisplay('0')"
-      >
-        0
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="appendToDisplay('.')"
-      >
-        .
-      </button>
-      <button
-        class="btn btn-outline-secondary col"
-        (click)="calculateOperations()"
-      >
-        =
-      </button>
+    <div class="text-center p-4">
+      <div class="buttons mt-3">
+        <button
+          class="btn btn-danger btn-rounded"
+          (click)="clearDisplay()"
+          data-mdb-ripple-init
+        >
+          AC
+        </button>
+        <button
+          class="btn btn-warning btn-rounded"
+          (click)="appendToDisplay('**')"
+          data-mdb-ripple-init
+        >
+          ^
+        </button>
+        <button
+          class="btn btn-warning btn-rounded"
+          (click)="appendToDisplay('%')"
+        >
+          %
+        </button>
+        <button
+          class="btn btn-warning btn-rounded"
+          (click)="appendToDisplay('/')"
+        >
+          ÷
+        </button>
+      </div>
+      <div class="buttons mt-3">
+        <button class="btn btn-dark" (click)="appendToDisplay('7')">7</button>
+        <button class="btn btn-dark" (click)="appendToDisplay('8')">8</button>
+        <button class="btn btn-dark" (click)="appendToDisplay('9')">9</button>
+        <button
+          class="btn btn-warning btn-rounded"
+          (click)="appendToDisplay('*')"
+        >
+          x
+        </button>
+      </div>
+      <div class="buttons mt-3">
+        <button class="btn btn-dark" (click)="appendToDisplay('4')">4</button>
+        <button class="btn btn-dark" (click)="appendToDisplay('5')">5</button>
+        <button class="btn btn-dark" (click)="appendToDisplay('6')">6</button>
+        <button
+          class="btn btn-warning btn-rounded"
+          (click)="appendToDisplay('-')"
+        >
+          -
+        </button>
+      </div>
+      <div class="buttons mt-3">
+        <button class="btn btn-dark" (click)="appendToDisplay('1')">1</button>
+        <button class="btn btn-dark" (click)="appendToDisplay('2')">2</button>
+        <button class="btn btn-dark" (click)="appendToDisplay('3')">3</button>
+        <button
+          class="btn btn-warning btn-rounded"
+          (click)="appendToDisplay('+')"
+        >
+          +
+        </button>
+      </div>
+      <div class="buttons mt-3 mb-3">
+        <button class="btn zero btn-dark" (click)="appendToDisplay('0')">
+          0
+        </button>
+        <button
+          class="btn btn-warning btn-rounded"
+          (click)="appendToDisplay('.')"
+        >
+          .
+        </button>
+        <button
+          class="btn btn-success btn-rounded"
+          (click)="calculateOperations()"
+        >
+          =
+        </button>
+      </div>
     </div>
   </section>
 </main>
