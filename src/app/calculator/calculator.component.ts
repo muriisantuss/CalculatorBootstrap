@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-calculator',
@@ -7,6 +7,21 @@ import { Component } from '@angular/core';
 })
 export class CalculatorComponent {
   displayValue: string = '';
+  themes = ['redder', 'purpler', 'dark']; // Lista de temas
+  currentTheme = this.themes[0]; // Tema padrão
+
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
+
+  toggleMode() {
+    const currentIndex = this.themes.indexOf(this.currentTheme);
+    const nextIndex = (currentIndex + 1) % this.themes.length;
+    const nextTheme = this.themes[nextIndex];
+
+    const html = this.el.nativeElement.ownerDocument.documentElement;
+    this.renderer.setAttribute(html, 'class', nextTheme);
+
+    this.currentTheme = nextTheme;
+  }
 
   appendToDisplay(value: string = '') {
     if (+value >= 0) {
@@ -14,7 +29,7 @@ export class CalculatorComponent {
     } else {
       const lastChar = this.displayValue.slice(-1);
 
-      if (!['+', '-', '*', '%', '**'].includes(lastChar)) {
+      if (!['+', '-', '*', '%', '**', '/', '.'].includes(lastChar)) {
         // Adiciona apenas se o último caractere não for um operador
         this.displayValue += value;
       }

@@ -1,6 +1,17 @@
 <main
   class="d-flex align-items-center justify-content-center vh-100 p-3 mb-2 bg-dark bg-opacity-10 bg-gradient p-2"
 >
+  <button
+    type="button"
+    id="themeButton"
+    (click)="toggleMode()"
+    class="theme btn btn-success btn-floating float-start"
+    data-mdb-ripple-init
+    data-mdb-ripple-color="dark"
+  >
+    <i class="fas fa-star"></i>
+  </button>
+
   <section class="card row justify-content-center">
     <div class="card-header p-4">
       <div class="input-group mb-3 mt-3">

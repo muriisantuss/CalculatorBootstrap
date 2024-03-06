@@ -1,8 +1,7 @@
-
 .card {
   background-color: white;
   color: #ffffff;
-  box-shadow: 0 0.5rem 0px var(--color-first);
+  box-shadow: 0 0.5rem 0px var(--color-primary);
   transition: transform 0.3s ease-in-out;
   margin: 10px; /* Sombra mais escura no hover */
 }
@@ -11,27 +10,33 @@
   transform: translateY(-5px);
 }
 .card-header {
-  background-color: var(--color-first);
+  background-color: var(--color-primary);
 }
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
 }
 
-.zero{
+.zero {
   grid-column: 1/3;
 }
 
-.fas{
+.fa-calculator {
+  color: white;
+}
+.fa-star {
   color: white;
 }
 
-.btn-warning{
-  background-color: var(--color-second);
-
+.btn-dark {
+  background-color: var(--color-primary);
 }
-.btn-dark{
-  background-color: var(--color-first);
+
+.btn-warning {
+  background-color: var(--color-secondary);
+}
+.btn-danger {
+  background-color: var(--color-tertiary);
 }
