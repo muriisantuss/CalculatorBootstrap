@@ -26,6 +26,10 @@ Em um projeto Angular recente, criei uma calculadora básica. Para estilizar a i
 
 ### 🖼️ Layout
 
+<img src="https://github.com/muriisantuss/CalculatorBootstrap/assets/151096774/5af7d867-1cf4-47bd-a8bc-14ce5c2d08fb" min-width="300px" max-width="333px" width="333px"/>
+<img src="https://github.com/muriisantuss/CalculatorBootstrap/assets/151096774/43bba458-c93a-455d-ad94-b96de02d61d4" min-width="300px" max-width="333px" width="333px"/>
+<img src="https://github.com/muriisantuss/CalculatorBootstrap/assets/151096774/72554163-6034-45bc-a8d9-30e5b294919a" min-width="300px" max-width="333px" width="333px"/>
+
 
 
 ### 🔧 Instalação
